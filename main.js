@@ -103,7 +103,7 @@ document.addEventListener("click", async (e) => {
     <p class="last">Text: ${contact.last}</p>
     <div class="threebtn">
     <button class="delete btn-dlt" id=${contact.id}>Delete</button>
-    <button id="edit" class="btn-edit">Edit</button>
+    <button class="btn btn-primary btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal" id=${contact.id}>Edit</button>
     <button id="close">Close</button>
     </div>
     
@@ -193,12 +193,13 @@ document.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn-edit")) {
     let id = e.target.id;
+    console.log(e.target.id);
     fetch(`${API}/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        editName.value = data.title;
-        editLast.value = data.price;
-        editPhone.value = data.descr;
+        editName.value = data.cont;
+        editLast.value = data.last;
+        editPhone.value = data.phone;
         btnSaveEdit.setAttribute("id", data.id);
       });
   }
@@ -207,12 +208,12 @@ document.addEventListener("click", (e) => {
 // кнопка из модалки для сохранения
 btnSaveEdit.addEventListener("click", (e) => {
   let id = e.target.id;
-  let name = editName.value;
+  let cont = editName.value;
   let last = editLast.value;
   let phone = editPhone.value;
 
   let edittedProduct = {
-    name: name,
+    cont: cont,
     last: last,
     phone: phone,
   };

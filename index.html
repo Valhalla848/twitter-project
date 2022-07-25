@@ -121,21 +121,73 @@
     </nav>
     <!--? start pagination -->
 
-    <div class="modal1">
-      <div class="modal-header1">
-        <h3>Modal Title</h3>
-        <label for="modal">
-          <p>Close</p>
-        </label>
-      </div>
-      <section>
-        <input type="text" id="edit-name" placeholder="name" />
-        <input type="text" id="edit-last" placeholder="Last Name" />
-        <input type="text" id="edit-phone" placeholder="phone humber" />
-        <button id="btn-save-edit">SAVE Change</button>
-      </section>
-    </div>
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+  
+      Запустите демо модального окна
+    </button> -->
 
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="w-100 d-flex flex-column justify-content-center align-items-center"
+            >
+              <input
+                type="text"
+                id="edit-name"
+                placeholder="title"
+                class="form-control mb-2"
+              />
+
+              <input
+                type="text"
+                id="edit-last"
+                placeholder="price"
+                class="form-control mb-2"
+              />
+              <input
+                type="text"
+                id="edit-phone"
+                placeholder="description"
+                class="form-control mb-2"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btn-save-edit">
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Пакет JavaScript с Popper -->
 
     <script
